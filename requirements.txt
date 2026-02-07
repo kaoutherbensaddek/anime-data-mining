@@ -1,1 +1,95 @@
+the names of the notebooks to be used in the project 
+notebooks/
+├── 01_eda.ipynb
+├── 02_data_preprocessing.ipynb
+├── 03_feature_engineering.ipynb
+├── 04_clustering.ipynb
+├── 05_post_cluster_analysis.ipynb
+└── 06_optional_modeling.ipynb
 
+
+What each notebook does 
+
+01_eda.ipynb
+Dataset overview, distributions, missing values, visualizations
+
+02_data_preprocessing.ipynb
+Cleaning, encoding genres, normalization, merging datasets
+
+03_feature_engineering.ipynb
+Creating features for clustering / analysis
+
+04_clustering.ipynb
+K-Means, elbow method, cluster interpretation
+
+05_post_cluster_analysis.ipynb
+Analyze ratings per cluster (optional but 🔥)
+--------------------------------------------------------------------------------------------
+
+# 01_ Exploratory Data Analysis (EDA) 📊
+
+## 1️⃣ Project Overview
+This notebook provides an **exploratory data analysis (EDA)** of the anime and ratings datasets.
+The goal is to understand the structure of the data, check for missing values, explore distributions, 
+and gain insights into anime content and user preferences.
+
+Datasets used:
+- `anime.csv` — metadata about anime titles (genres, type, episodes, etc.)
+- `ratings.csv` — user ratings for each anime
+
+---
+
+## 2️⃣ Loading the Data
+We load the datasets into Pandas DataFrames and check basic information:
+- Shape of the datasets
+- Column names
+- Data types
+- First few rows
+
+---
+
+## 3️⃣ Data Cleaning Check
+- Identify missing values
+- Identify duplicates
+- Handle inconsistent or invalid entries
+- Overview of categorical and numerical columns
+
+---
+
+## 4️⃣ Summary Statistics
+- Basic statistics of numerical columns (mean, median, min, max, std)
+- Count of categorical variables (e.g., type, genres)
+- Distribution of ratings
+- Distribution of number of episodes, duration, members
+
+---
+
+## 5️⃣ Visualizations
+- **Rating Distribution:** Histogram of user ratings
+- **Anime Popularity:** Distribution of member counts
+- **Genres:** Count of anime by genre
+- **Type of Anime:** Count by type (TV, Movie, OVA, etc.)
+- **Episodes / Duration:** Histograms or boxplots
+
+*(Optional advanced visuals)*
+- Correlation heatmap
+- Top 10 anime by popularity or rating
+- Rating distribution per genre or type
+
+---
+
+## 6️⃣ Insights / Observations
+- Summarize patterns you see:
+  - Most common genres
+  - Most popular anime types
+  - Rating trends
+  - Any anomalies or unusual patterns
+
+---
+
+## 7️⃣ Next Steps
+Based on the EDA, the next steps will include:
+- Data preprocessing and cleaning
+- Feature engineering (e.g., encoding genres, type)
+- Clustering analysis
+- Post-cluster rating analysis
