@@ -26,41 +26,7 @@ K-Means, elbow method, cluster interpretation
 Analyze ratings per cluster (optional but 🔥)
 --------------------------------------------------------------------------------------------
 
-# 01_ Exploratory Data Analysis (EDA) 📊
 
-## 1️⃣ Project Overview
-This notebook provides an **exploratory data analysis (EDA)** of the anime and ratings datasets.
-The goal is to understand the structure of the data, check for missing values, explore distributions, 
-and gain insights into anime content and user preferences.
-
-Datasets used:
-- `anime.csv` — metadata about anime titles (genres, type, episodes, etc.)
-- `ratings.csv` — user ratings for each anime
-
----
-
-## 2️⃣ Loading the Data
-We load the datasets into Pandas DataFrames and check basic information:
-- Shape of the datasets
-- Column names
-- Data types
-- First few rows
-
----
-
-## 3️⃣ Data Cleaning Check
-- Identify missing values
-- Identify duplicates
-- Handle inconsistent or invalid entries
-- Overview of categorical and numerical columns
-
----
-
-## 4️⃣ Summary Statistics
-- Basic statistics of numerical columns (mean, median, min, max, std)
-- Count of categorical variables (e.g., type, genres)
-- Distribution of ratings
-- Distribution of number of episodes, duration, members
 
 ---
 
