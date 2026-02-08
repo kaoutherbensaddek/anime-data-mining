@@ -28,31 +28,6 @@ Analyze ratings per cluster (optional but 🔥)
 
 
 
----
-
-## 5️⃣ Visualizations
-- **Rating Distribution:** Histogram of user ratings
-- **Anime Popularity:** Distribution of member counts
-- **Genres:** Count of anime by genre
-- **Type of Anime:** Count by type (TV, Movie, OVA, etc.)
-- **Episodes / Duration:** Histograms or boxplots
-
-*(Optional advanced visuals)*
-- Correlation heatmap
-- Top 10 anime by popularity or rating
-- Rating distribution per genre or type
-
----
-
-## 6️⃣ Insights / Observations
-- Summarize patterns you see:
-  - Most common genres
-  - Most popular anime types
-  - Rating trends
-  - Any anomalies or unusual patterns
-
----
-
 ## 7️⃣ Next Steps
 Based on the EDA, the next steps will include:
 - Data preprocessing and cleaning
