@@ -136,3 +136,15 @@ Most active users / most rated animes
 Merge with anime_df to see average user rating vs community rating
 
 This will tell you whether collaborative filtering is feasible.
+
+----------------------------------------------------------------------------------------------------------------------
+🧠 THE CLEANING FRAMEWORK (remember this)
+
+For every column, always ask the same 4 questions:
+
+1️⃣ What type should this be?
+2️⃣ What values are valid?
+3️⃣ What values are missing or inconsistent?
+4️⃣ What is the least-lying way to fix them?
+
+If you remember this loop → you’re good forever.
