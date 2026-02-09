@@ -148,3 +148,127 @@ For every column, always ask the same 4 questions:
 4️⃣ What is the least-lying way to fix them?
 
 If you remember this loop → you’re good forever.
+
+
+-----------------------------------------------------------------------------
+
+Fix missing:
+
+anime_df['type'].fillna('unknown', inplace=True)
+
+
+Optional standardization:
+
+anime_df['type'].replace({
+    'tv series': 'tv',
+    'tv show': 'tv'
+}, inplace=True)
+
+
+📌 Why lowercase?
+
+Consistency. "TV" and "tv" are the same thing.
+
+✅ 5. episodes (DONE ✔)
+
+You already:
+
+converted to numeric
+
+handled invalid values
+
+kept NaN
+
+standardized to Int64
+
+✔ Clean.
+
+✅ 6. rating (Numeric score)
+What it should be
+
+Numeric
+
+Between 1 and 10
+
+Cleaning steps
+anime_df['rating'] = pd.to_numeric(
+    anime_df['rating'],
+    errors='coerce'
+)
+
+
+Remove invalid:
+
+anime_df.loc[~anime_df['rating'].between(1, 10), 'rating'] = np.nan
+
+
+Keep NaN (don’t fill yet).
+
+📌 Same logic as episodes.
+
+✅ 7. members (Numeric popularity)
+What it is
+
+Number of users who added the anime
+
+Must be ≥ 0
+
+Cleaning steps
+anime_df['members'] = pd.to_numeric(
+    anime_df['members'],
+    errors='coerce'
+)
+
+
+Fix invalid:
+
+anime_df.loc[anime_df['members'] < 0, 'members'] = np.nan
+
+
+Convert type:
+
+anime_df['members'] = anime_df['members'].astype('Int64')
+
+
+📌 Do NOT normalize or log yet — not cleaning.
+
+🧼 FINAL CLEANING CHECK (important)
+anime_df.info()
+anime_df.isna().sum()
+
+
+You should see:
+
+correct dtypes
+
+missing values only where justified
+
+no weird strings in numeric columns
+
+📝 FINAL NOTE YOU CAN MEMORIZE
+
+Cleaning =
+
+fix types
+
+remove impossible values
+
+preserve missing truth
+
+standardize text
+
+Cleaning ≠
+
+filling everything
+
+transforming distributions
+
+feature creation
+
+If you want next, I can:
+
+turn this into a reusable cleaning checklist
+
+or help you write the Data Cleaning section like a pro report
+
+or move cleanly into feature engineering when you say so 🚀
