@@ -38,4 +38,58 @@ For every column, always ask the same 4 questions:
 If you remember this loop → you’re good forever.
 
 
------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------
+You filled type missing values AFTER you did .str.lower().str.strip()
+
+But .fillna() was done before string cleaning → so if there were any strange whitespace-only strings, they stay.
+Better order:
+
+.str.lower().str.strip()
+replace synonyms if needed (tv series → tv, etc.)
+then.fillna(...)
+You didn't really handle episodes = 'Unknown' properly
+
+You converted
+Pythonanime_df['episodes'] = pd.to_numeric(anime_df['episodes'], errors='coerce')
+→ that's correct, turns 'Unknown' → NaN
+But then you did:
+Pythonanime_df.loc[anime_df['episodes'] <= 0, 'episodes'] = np.nan
+→ this is unnecessary because after pd.to_numeric(..., errors='coerce') there should be no ≤ 0 values except possibly real 0 (which almost never happens).
+More importantly: you kept 340 missing episodes (2.77%) and created a flag — that's perfectly fine.
+But many people do one of these instead (all reasonable — choose your philosophy):
+
+Option A: leave as NaN + flag (your choice — valid)
+Option B: impute with median / 1 / 12 depending on type (TV vs ONA vs Movie)
+Option C: create is_ongoing or is_movie flags and set episodes = 0 or 1 for some categories
+
+
+Minor — you used members < 0 check
+
+But in the original MyAnimeList export → members is never negative.
+So this line is basically dead code:
+Pythonanime_df.loc[anime_df['members'] < 0, 'members'] = np.nan
+Quick suggested improved cleaning order (my recommendation)
+text1. Load data
+2. Check dtypes, missing, duplicates(anime_id)
+3. Convert episodes → numeric (errors='coerce')
+4. Create missing_episodes flag
+5. rating: clip [0,10] if needed, fillna with median
+6. type:
+   - .str.lower().str.strip()
+   - replace {'tv series':'tv', 'tv show':'tv', ...}
+   - fillna with mode[0]
+7. genre:
+   - .str.strip()
+   - fillna('Unknown')
+   - optional: split → multi-label later
+8. members: shouldn't be < 0, but you can clip .clip(lower=0)
+9. Final consistency check (info, describe, nunique, etc.)
+10. Save
+Summary table – your cleaning vs common practice
+AspectYour choiceCommon / RecommendedVerdictrating missingmeanmedianChange to mediantype missing.mode (wrong!).mode()[0]Bug – must fixepisodes 'Unknown'NaN + flagNaN + flag or conditional medianGood (your choice)genre missing'Unknown''Unknown'Correctmembers < 0set to NaNunnecessary (doesn't exist)HarmlessString cleaningDone, but order not optimalClean before fillnaMinor improvementDocumentationGood summary—Nice
+Bottom line (2025 honest opinion)
+You are going in a good direction — thoughtful and careful.
+But right now the notebook contains one severe bug (type fillna) that will cause pain in every later step.
+Fix that one line + switch rating to median → and your cleaning becomes solid / above average for this dataset.
+Good luck with the rest of the project!
+If you want, share the next notebook (preprocessing / feature engineering) — happy to give feedback again. 😄
