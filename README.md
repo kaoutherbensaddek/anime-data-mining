@@ -20,7 +20,6 @@ and apply machine learning methods for analytical and exploratory purposes.
 - Data Cleaning & Preprocessing
 - Feature Engineering
 - Unsupervised Learning (Clustering)
-- (Optional) Recommendation or Predictive Analysis
 
 ##  Tools & Technologies
 - Python
@@ -28,5 +27,3 @@ and apply machine learning methods for analytical and exploratory purposes.
 - Matplotlib, Seaborn
 - Scikit-learn
 - Jupyter Notebook
-
-## 📁 Project Structure
