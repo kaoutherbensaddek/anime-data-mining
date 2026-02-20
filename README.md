@@ -7,13 +7,7 @@ and apply machine learning methods for analytical and exploratory purposes.
 
 ##  Dataset
 - Source: Kaggle Anime Dataset
-- Contains information about:
-  - Anime titles
-  - Genres
-  - Type (TV, Movie, OVA…)
-  - Number of episodes
-  - Ratings (average)
-  - Popularity metrics (members)
+- Contains information about: Anime titles, Genres,Type (TV, Movie, OVA…),Number of episodes, Ratings (average), Popularity metrics (members)
 
 ##  Data Mining Methods Used
 - Exploratory Data Analysis (EDA)
