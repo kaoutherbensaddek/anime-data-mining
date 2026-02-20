@@ -1,4 +1,4 @@
-# Anime Data Mining Project 🎌
+# Anime Data Mining Project 
 
 ##  Project Overview
 This project applies **data mining techniques** to an anime-related dataset sourced from Kaggle.
