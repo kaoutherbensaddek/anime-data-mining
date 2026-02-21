@@ -6,7 +6,7 @@ The objective is to explore anime content and user interaction data, discover hi
 and apply machine learning methods for analytical and exploratory purposes.
 
 ##  Dataset
-- Source: Kaggle Anime Dataset
+- Source: Kaggle Anime Dataset (https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database?select=anime.csv)
 - Contains information about: Anime titles, Genres,Type (TV, Movie, OVA…),Number of episodes, Ratings (average), Popularity metrics (members)
 
 ##  Data Mining Methods Used
