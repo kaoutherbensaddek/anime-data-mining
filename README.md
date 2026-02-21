@@ -1,5 +1,14 @@
 # Anime Data Mining Project 
 
+
+<p align="center">
+  <img src="https://via.placeholder.com/800x300.png?text=Anime+Clustering+Project" alt="Project Banner"/>
+</p>
+
+
+
+
+
 ##  Project Overview
 This project applies **data mining techniques** to an anime-related dataset sourced from Kaggle.
 The objective is to explore anime content and user interaction data, discover hidden patterns,
@@ -21,3 +30,6 @@ and apply machine learning methods for analytical and exploratory purposes.
 - Matplotlib, Seaborn
 - Scikit-learn
 - Jupyter Notebook
+
+
+

@@ -1,26 +1,9 @@
-the names of the notebooks to be used in the project 
 notebooks/
-├── 01_eda.ipynb
-├── 02_data_preprocessing.ipynb
-├── 03_feature_engineering.ipynb
-├── 04_clustering.ipynb
 ├── 05_post_cluster_analysis.ipynb
 └── 06_optional_modeling.ipynb
 
 
 What each notebook does 
-
-01_eda.ipynb
-Dataset overview, distributions, missing values, visualizations
-
-02_data_preprocessing.ipynb
-Cleaning, encoding genres, normalization, merging datasets
-
-03_feature_engineering.ipynb
-Creating features for clustering / analysis
-
-04_clustering.ipynb
-K-Means, elbow method, cluster interpretation
 
 05_post_cluster_analysis.ipynb
 Analyze ratings per cluster (optional but 🔥)
@@ -85,11 +68,10 @@ text1. Load data
 8. members: shouldn't be < 0, but you can clip .clip(lower=0)
 9. Final consistency check (info, describe, nunique, etc.)
 10. Save
-Summary table – your cleaning vs common practice
-AspectYour choiceCommon / RecommendedVerdictrating missingmeanmedianChange to mediantype missing.mode (wrong!).mode()[0]Bug – must fixepisodes 'Unknown'NaN + flagNaN + flag or conditional medianGood (your choice)genre missing'Unknown''Unknown'Correctmembers < 0set to NaNunnecessary (doesn't exist)HarmlessString cleaningDone, but order not optimalClean before fillnaMinor improvementDocumentationGood summary—Nice
-Bottom line (2025 honest opinion)
-You are going in a good direction — thoughtful and careful.
-But right now the notebook contains one severe bug (type fillna) that will cause pain in every later step.
-Fix that one line + switch rating to median → and your cleaning becomes solid / above average for this dataset.
-Good luck with the rest of the project!
-If you want, share the next notebook (preprocessing / feature engineering) — happy to give feedback again. 😄
+
+
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
