@@ -22,5 +22,15 @@ and apply machine learning methods for analytical and exploratory purposes.
 - Scikit-learn
 - Jupyter Notebook
 
+### **How to run locally**
 
+```bash
+# 1. Clone the repo
+git clone https://github.com/kaoutherbensaddek/anime-data-mining.git
 
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Start Jupyter
+jupyter notebook
+```
